@@ -679,3 +679,109 @@ button:hover, .custom-form button:hover {
         margin-top: 0;
     }
 }
+
+/* --- MOBILE CART OPTIMIZATION --- */
+@media (max-width: 600px) {
+  .cart-modal-content {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    padding: 0 !important;
+    min-width: 0 !important;
+    border-radius: 0 !important;
+    background: #fafdff !important;
+    box-shadow: 0 1px 8px #5ad3a41e !important;
+    display: flex;
+    flex-direction: column;
+    height: 100vh !important;
+    position: relative;
+  }
+  .cart-modal-content > h2, .cart-close {
+    display: none !important;
+  }
+  .cart-modal-content:before {
+    content: '';
+    display: block;
+    height: 0.8rem;
+  }
+  .cart-header-mini {
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+    padding: 17px 16px 7px 20px;
+    background: #fff;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #194422;
+    letter-spacing: .04em;
+    border-bottom: 1.4px solid #e3f6ea;
+    position: sticky;
+    top: 0; left: 0; right: 0;
+    z-index: 20;
+    min-height: 44px;
+  }
+  .cart-header-mini .cart-close {
+    display: inline-block !important;
+    background: none !important;
+    color: #149a42 !important;
+    font-size: 2rem !important;
+    position: static !important;
+    margin: 0 !important;
+    padding: 4px 16px 4px 8px !important;
+    border-radius: 12px !important;
+    transition: background .12s;
+  }
+  .cart-header-mini .cart-close:active {
+    background: #e6ffe7 !important;
+  }
+  .cart-items {
+    padding: 8px 10px 4px 14px !important;
+    font-size: 0.96rem !important;
+  }
+  .cart-summary {
+    padding: 9px 16px 9px 16px !important;
+    font-size: 1.06rem !important;
+    background: #ebfff3cc !important;
+    border-radius: 14px !important;
+    margin: 8px 9px 2px 9px !important;
+    border-top: 1px solid #dbffef !important;
+    box-shadow: 0 1px 6px #cef4d73a !important;
+  }
+  .checkout-form {
+    box-shadow: 0 2px 10px #defeee38 !important;
+    background: #f1fff6 !important;
+    border-radius: 14px !important;
+    margin: 10px 9px 13px 9px !important;
+    padding: 13px 7px 76px 7px !important;
+  }
+  .checkout-form input,
+  .checkout-form textarea {
+    font-size: 1.02rem !important;
+    border-radius: 8px !important;
+    padding: 7px 8px !important;
+  }
+  .checkout-form button {
+    font-size: 1.19rem !important;
+    padding: 15px 0 !important;
+    position: fixed !important;
+    left: 0; bottom: 0;
+    width: 100vw !important;
+    z-index: 99;
+    border-radius: 18px 18px 0 0 !important;
+    margin: 0 !important;
+    box-shadow: 0 -2px 22px #64dfa094 !important;
+  }
+  .cart-item { gap: 2vw; padding: 11px 0 9px 0 !important; }
+  .cart-item-remove { font-size: 1rem !important; }
+  html, body { overflow-x: hidden !important; }
+}
+/* END MOBILE CART OPTIMIZATION */
+
+/* Add this just after your .cart-modal-content: */
+.cart-modal-content .cart-header-mini {
+  display: none;
+}
+@media (max-width: 600px) {
+  .cart-modal-content .cart-header-mini {
+    display: flex;
+  }
+}
