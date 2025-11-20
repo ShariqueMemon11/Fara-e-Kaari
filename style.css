@@ -26,8 +26,8 @@ header {
     text-align: center; /* Secondary center for inline elements */
 }
 .logo {
-    width: 250px;
-    height: 250px;
+    width: 280px;
+    height: 280px;
     max-width: 130px;
     max-height: 130px;
     margin-top: 0;
@@ -57,6 +57,7 @@ header h1 {
     letter-spacing: 0.05em;
     color: #25a244;
     margin-top: 10px;  /* Brings title closer to logo */
+    font-family: 'Gilroy';
 }
 header p {
     font-size: 1.23rem;
@@ -69,6 +70,17 @@ header p {
     padding-top: 20px;
     padding: 20px 7vw 60px 7vw;
     text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.products::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url('IMG_9658-removebg-preview.png') no-repeat center/contain;
+    opacity: 1.18;
+    z-index: 0;
+    pointer-events: none;
 }
 .products h2 {
     font-size: 2.2rem;
@@ -80,6 +92,8 @@ header p {
     display: grid;
     gap: 36px;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    position: relative;
+    z-index: 1;
 }
 .card {
     background: #fff;
@@ -199,6 +213,86 @@ button:hover, .custom-form button:hover {
     box-shadow: 0 2px 8px #b6efc8;
     font-weight: 700;
     letter-spacing: 0.03em;
+}
+
+/* Comment Section */
+.comments {
+    margin: 36px 6vw 68px 6vw;
+    padding: 0 0 40px 0;
+}
+.comment-box {
+    background: #fff;
+    border-radius: 26px;
+    box-shadow: 0 12px 32px rgba(23, 149, 74, 0.12);
+    padding: 38px 40px;
+}
+.comment-box h2 {
+    font-size: 2rem;
+    color: #184d28;
+    margin: 0 0 8px 0;
+}
+.comment-intro {
+    margin: 0 0 22px 0;
+    color: #2d6d3c;
+    font-size: 1.04rem;
+}
+.comment-form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 24px;
+}
+.comment-form input,
+.comment-form textarea {
+    border: 1.4px solid #bfeaca;
+    border-radius: 14px;
+    padding: 12px 14px;
+    font-size: 1rem;
+    background: #f7fff9;
+    outline: none;
+    transition: border 0.15s;
+}
+.comment-form input:focus,
+.comment-form textarea:focus {
+    border: 1.4px solid #22a24e;
+}
+.comment-form textarea {
+    min-height: 110px;
+    resize: vertical;
+}
+.comment-form button {
+    align-self: flex-start;
+    padding: 12px 32px;
+}
+.comment-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.comment-empty {
+    color: #6c8d73;
+    font-style: italic;
+}
+.comment-item {
+    background: linear-gradient(135deg, #f4fff8, #ebffee);
+    border-radius: 18px;
+    padding: 18px 20px;
+    box-shadow: 0 6px 18px rgba(21, 136, 58, 0.12);
+}
+.comment-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.95rem;
+    color: #2c5c39;
+    margin-bottom: 6px;
+    font-weight: 600;
+}
+.comment-text {
+    font-size: 1rem;
+    color: #1b3f23;
+    line-height: 1.5;
+    white-space: pre-line;
 }
 
 /* Modal Styles for Order Confirmation */
@@ -613,6 +707,17 @@ button:hover, .custom-form button:hover {
   .custom-order { padding: 7vw 0 !important; margin: 7vw 1vw 7vw 1vw !important; border-radius: 10px; }
   .custom-form { padding: 7vw 2vw !important; }
   .custom-form textarea { min-height: 80px !important; }
+    .comments {
+        margin: 20px 2vw 40px 2vw !important;
+        padding-bottom: 10px;
+    }
+    .comment-box {
+        padding: 26px 16px !important;
+        border-radius: 16px;
+    }
+    .comment-box h2 {
+        font-size: 1.4rem !important;
+    }
   .cart-btn-container {
     top: 7px !important;
     right: 7px !important;
@@ -785,3 +890,5 @@ button:hover, .custom-form button:hover {
     display: flex;
   }
 }
+
+

@@ -195,3 +195,78 @@ function showOrderPopup(title, msg){
     modalContent.querySelector('p').textContent = msg;
     orderModal.style.display = 'flex';
 }
+
+// --- Comment Box Logic --- //
+const COMMENT_KEY = 'fek_comments_v1';
+const commentFormEl = document.getElementById('comment-form');
+const commentListEl = document.getElementById('comment-list');
+let comments = [];
+
+function loadComments() {
+    try {
+        comments = JSON.parse(localStorage.getItem(COMMENT_KEY)) || [];
+    } catch (err) {
+        comments = [];
+    }
+}
+function saveComments() {
+    localStorage.setItem(COMMENT_KEY, JSON.stringify(comments));
+}
+function formatCommentDate(dateString) {
+    try {
+        return new Date(dateString).toLocaleString([], { dateStyle: 'medium', timeStyle: 'short' });
+    } catch (e) {
+        return '';
+    }
+}
+function renderComments() {
+    if (!commentListEl) return;
+    if (!comments.length) {
+        commentListEl.innerHTML = '<p class="comment-empty">No comments yet. Be the first to share!</p>';
+        return;
+    }
+    commentListEl.innerHTML = '';
+    comments.slice().reverse().forEach(comment => {
+        const item = document.createElement('div');
+        item.className = 'comment-item';
+
+        const meta = document.createElement('div');
+        meta.className = 'comment-meta';
+        const nameSpan = document.createElement('span');
+        nameSpan.textContent = comment.name || 'Guest';
+        const dateSpan = document.createElement('span');
+        dateSpan.textContent = formatCommentDate(comment.createdAt);
+
+        meta.appendChild(nameSpan);
+        meta.appendChild(dateSpan);
+
+        const text = document.createElement('p');
+        text.className = 'comment-text';
+        text.textContent = comment.message;
+
+        item.appendChild(meta);
+        item.appendChild(text);
+
+        commentListEl.appendChild(item);
+    });
+}
+
+if (commentFormEl && commentListEl) {
+    loadComments();
+    renderComments();
+
+    commentFormEl.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const name = commentFormEl.commenter.value.trim() || 'Guest';
+        const message = commentFormEl.comment.value.trim();
+        if (!message) return;
+        comments.push({
+            name,
+            message,
+            createdAt: new Date().toISOString()
+        });
+        saveComments();
+        renderComments();
+        commentFormEl.reset();
+    });
+}
