@@ -79,7 +79,7 @@ header p {
     inset: 0;
     background: url('IMG_9658-removebg-preview.png') no-repeat right center;
     background-size: contain;
-    opacity: 0.18;
+    opacity: 1.18;
     z-index: 0;
     pointer-events: none;
 }
@@ -610,8 +610,28 @@ button:hover, .custom-form button:hover {
         padding: 18px 4vw 16px 4vw;
     }
     .product-grid {
-        gap: 16px;
+        gap: 12px;
         grid-template-columns: 1fr 1fr;
+    }
+    .card {
+        padding: 12px 8px 12px 8px;
+    }
+    .card img {
+        max-width: 100%;
+        height: 90px;
+        margin-bottom: 8px;
+    }
+    .card h3 {
+        font-size: 0.95rem;
+        margin: 4px 0 2px 0;
+    }
+    .price {
+        font-size: 0.9rem;
+        margin-bottom: 8px;
+    }
+    .card button {
+        font-size: 0.85rem;
+        padding: 8px 12px;
     }
     .custom-order {
         margin: 16px 2vw 24px 2vw;
@@ -680,25 +700,34 @@ button:hover, .custom-form button:hover {
   header p {
     font-size: 0.98rem !important;
   }
-  .products h2 { font-size: 1.3rem !important; }
-  .products { padding: 9px 2.5vw 12px 2.5vw !important; }
+  .products h2 { font-size: 1.3rem !important; margin-bottom: 14px !important; }
+  .products { padding: 12px 3vw 20px 3vw !important; }
   .product-grid {
     grid-template-columns: 1fr 1fr !important;
-    gap: 12px !important;
+    gap: 10px !important;
   }
   .card {
-    padding: 12px 6px 12px 6px !important;
+    padding: 10px 6px 10px 6px !important;
     border-radius: 12px !important;
     min-width: 0 !important;
   }
   .card img {
     max-width: 100% !important;
     width: 100% !important;
-    height: 110px !important;
+    height: 85px !important;
+    margin-bottom: 6px !important;
   }
-  .card h3 { font-size: 1rem !important; }
-  .price { font-size: 0.98rem !important; }
-  button, .custom-form button {
+  .card h3 { font-size: 0.9rem !important; margin: 2px 0 1px 0 !important; }
+  .price { font-size: 0.88rem !important; margin-bottom: 6px !important; }
+  .card button {
+    font-size: 0.85rem !important;
+    padding: 8px 12px !important;
+    min-width: 0 !important;
+    width: 100% !important;
+    border-radius: 8px !important;
+    margin: 0 !important;
+  }
+  .custom-form button {
     font-size: 1rem !important;
     padding: 12px 0 !important;
     min-width: 0 !important;
