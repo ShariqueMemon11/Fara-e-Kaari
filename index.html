@@ -1,158 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fara-e-Kaari | Date Leaf Bags</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fara-e-Kaari | Redirecting…</title>
+  <!-- Instant Redirect -->
+  <meta http-equiv="refresh" content="0; url=https://duafatimah-12.github.io/Farah-e-kari/">
 </head>
 <body>
-<!-- Palm/leaf images for corners -->
-
-<!-- Header -->
-<header>
-    <img src="logo.jpg" class="logo" alt="Logo">
-    <h1>Fara-e-Kaari</h1>
-    <p>Mehfooz zindagai,behtar kal</p>
-</header>
-
-<!-- Product Section -->
-<section class="products">
-    <h2>Our Products</h2>
-
-    <div class="product-grid">
-
-        <!-- 8 Placeholder bags -->
-        <div class="card">
-            <img src="bag1.webp" alt="Bag 1">
-            <h3>Date Leaf Bag</h3>
-            <p class="price">Rs. 200</p>
-            <button class="add-to-cart" data-id="1" data-name="Date Leaf Bag" data-price="300">Add to Cart</button>
-        </div>
-
-        <div class="card">
-            <img src="bg2.webp" alt="Bag 2">
-            <h3>Date Leaf Bag</h3>
-            <p class="price">Rs. 200</p>
-            <button class="add-to-cart" data-id="2" data-name="Date Leaf Bag" data-price="300">Add to Cart</button>
-        </div>
-
-        <div class="card">
-            <img src="bg3.webp" alt="Bag 3">
-            <h3>Date Leaf Bag</h3>
-            <p class="price">Rs. 300</p>
-            <button class="add-to-cart" data-id="3" data-name="Date Leaf Bag" data-price="300">Add to Cart</button>
-        </div>
-
-        <div class="card">
-            <img src="bg4.webp" alt="Bag 4">
-            <h3>Date Leaf Bag</h3>
-            <p class="price">Rs. 300</p>
-            <button class="add-to-cart" data-id="4" data-name="Date Leaf Bag" data-price="300">Add to Cart</button>
-        </div>
-
-        <div class="card">
-            <img src="bg5.webp" alt="Bag 5">
-            <h3>Date Leaf Bag</h3>
-            <p class="price">Rs. 200</p>
-            <button class="add-to-cart" data-id="5" data-name="Date Leaf Bag" data-price="300">Add to Cart</button>
-        </div>
-
-        <div class="card">
-            <img src="bg6.webp" alt="Bag 6">
-            <h3>Date Leaf Bag</h3>
-            <p class="price">Rs. 200</p>
-            <button class="add-to-cart" data-id="6" data-name="Date Leaf Bag" data-price="300">Add to Cart</button>
-        </div>
-
-        <div class="card">
-            <img src="bg7.webp" alt="Bag 7">
-            <h3>Date Leaf Bag</h3>
-            <p class="price">Rs. 200</p>
-            <button class="add-to-cart" data-id="7" data-name="Date Leaf Bag" data-price="300">Add to Cart</button>
-        </div>
-
-        <div class="card">
-            <img src="bg8.webp" alt="Bag 8">
-            <h3>Date Leaf Bag</h3>
-            <p class="price">Rs. 150</p>
-            <button class="add-to-cart" data-id="8" data-name="Date Leaf Bag" data-price="300">Add to Cart</button>
-        </div>
-
-    </div>
-</section>
-
-
-<!-- Custom Order Form -->
-<section class="custom-order">
-    <h2>Custom Order</h2>
-    <p>Want a custom size or design? Tell us below:</p>
-
-    <form class="custom-form">
-        <label>Description:</label>
-        <textarea placeholder="Describe your custom bag..."></textarea>
-
-        <label>Upload Reference Image:</label>
-        <input type="file">
-
-        <button type="submit">Submit Custom Order</button>
-    </form>
-</section>
-
-<!-- Comment Section -->
-<section class="comments" id="comments">
-    <div class="comment-box">
-        <h2>Community Comments</h2>
-        <p class="comment-intro">Share your thoughts, questions, or feedback about our date-leaf creations.</p>
-        <form id="comment-form" class="comment-form">
-            <input type="text" name="commenter" placeholder="Your Name" required>
-            <textarea name="comment" placeholder="Write your comment..." required></textarea>
-            <button type="submit">Post Comment</button>
-        </form>
-        <div id="comment-list" class="comment-list"></div>
-    </div>
-</section>
-
-<!-- Cart Button (Fixed, top-right) -->
-<div class="cart-btn-container">
-  <button id="cart-btn" class="cart-btn">
-      <span class="cart-icon" id="svg-cart"></span>
-      <span id="cart-count" class="cart-badge">0</span>
-  </button>
-  <div id="cart-add-animation" class="cart-add-animation"></div>
-</div>
-
-<!-- Cart Modal/Side Panel -->
-<div id="cartModal" class="cart-modal">
-  <div class="cart-modal-content">
-    <div class="cart-header-mini">
-      Your Cart
-      <span class="cart-close" id="cartClose">&times;</span>
-    </div>
-    <h2>Your Cart</h2>
-    <div id="cart-items" class="cart-items"></div>
-    <div class="cart-summary">
-      <span id="cart-total-label">Total:</span> <span id="cart-total">Rs. 0</span>
-    </div>
-    <form id="checkout-form" class="checkout-form">
-      <h3>Checkout</h3>
-      <input type="text" name="name" placeholder="Your Name" required />
-      <input type="tel" name="phone" placeholder="Phone Number" required />
-      <textarea name="address" placeholder="Delivery Address" required></textarea>
-      <button type="submit">Place Order</button>
-    </form>
-  </div>
-</div>
-
-<div id="orderModal" class="modal" style="display:none;">
-  <div class="modal-content">
-    <span class="close" id="closeModal">&times;</span>
-    <h2>Thank You!</h2>
-    <p>Your custom order has been received. We will contact you soon.</p>
-  </div>
-</div>
-
-<script src="script.js"></script>
+  <p style="text-align:center; margin-top:50px;">
+    Redirecting to Fara-e-Kaari …<br/>
+    If you are not redirected automatically, <a href="https://duafatimah-12.github.io/Farah-e-kari/">click here</a>.
+  </p>
 </body>
 </html>
-
